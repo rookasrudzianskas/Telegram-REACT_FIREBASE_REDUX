@@ -11,3 +11,15 @@
     background-color: rgba(2, 150, 199);
     transition: all 0.1s;
 }
+
+.sidebarThread__details {
+    margin-left: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.sidebarThread__timestamp {
+    position: absolute;
+    top: 5px;
+    right: 0;
+}
