@@ -25,7 +25,7 @@ const Sidebar = () => {
                 <SidebarThread />
                 </div>
                 <div className="sidebar__bottom">
-                <Avatar />
+                <Avatar className="sidebar__bottom__avatar" />
                     <IconButton>
                         <PhoneAndroidOutlined />
                     </IconButton>

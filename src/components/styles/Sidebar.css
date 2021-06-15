@@ -38,3 +38,32 @@
 #sidebar__button {
     color: #fff !important;
 }
+
+.sidebar__threads {
+    overflow: scroll;
+    flex: 1;
+}
+
+.sidebar__threads::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar__bottom {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(190, 190, 190, 0.1);
+}
+
+.sidebar__bottom__avatar:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.sidebar__bottom > button {
+    color: #fff;
+}
+
+.sidebar__bottom > button:hover {
+    color: rgba(2, 150, 199);
+}
