@@ -3,7 +3,12 @@ import React from 'react';
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            Sidebar
+            <div className="sidebar__header">
+                <div className="sidebar__search">
+                    <input type="text" placeholder="Search" className="sidebar__input"/>
+
+                </div>
+            </div>
         </div>
     );
 };
