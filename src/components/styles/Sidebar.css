@@ -66,4 +66,5 @@
 
 .sidebar__bottom > button:hover {
     color: rgba(2, 150, 199);
+    transition: all 0.1s;
 }
