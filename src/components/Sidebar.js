@@ -22,6 +22,7 @@ const Sidebar = () => {
             <div className="sidebar__threads">
                 <SidebarThread />
                 <SidebarThread />
+                <SidebarThread />
 
                 </div>
                 <div className="sidebar__bottom">
