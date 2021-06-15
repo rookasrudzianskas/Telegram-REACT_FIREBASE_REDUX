@@ -9,6 +9,12 @@ const Sidebar = () => {
 
                 </div>
             </div>
+
+            <div className="sidebar__threads">
+                <div className="sidebar__bottom">
+
+                </div>
+            </div>
         </div>
     );
 };
