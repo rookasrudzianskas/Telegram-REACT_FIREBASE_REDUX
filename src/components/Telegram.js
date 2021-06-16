@@ -7,6 +7,7 @@ const Telegram = () => {
         <div className="telegram">
             <Sidebar />
             <Thread />
+
         </div>
     );
 };
