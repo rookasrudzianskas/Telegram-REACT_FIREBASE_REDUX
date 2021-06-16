@@ -1,9 +1,9 @@
 .thread {
     display: flex;
     flex: 0.65;
-    background-color: white;
     flex-direction: column;
     height: 100vh;
+    background-color: #2d4671;
 }
 
 .thread__header {
