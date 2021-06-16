@@ -5,3 +5,20 @@
     flex-direction: column;
     height: 100vh;
 }
+
+.thread__header {
+    display: flex;
+    border-bottom: 1px solid rgba(190, 190, 190, 0.1);
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.thread__header__contents {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    color: #fff !important;
+    padding: 10px;
+}
