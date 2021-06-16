@@ -1,6 +1,7 @@
 import React from 'react';
 import "./styles/Thread.css";
-import {Avatar} from "@material-ui/core";
+import {Avatar, IconButton} from "@material-ui/core";
+import {MoreHoriz} from "@material-ui/icons";
 
 const Thread = () => {
     return (
@@ -14,6 +15,9 @@ const Thread = () => {
                     </div>
                 </div>
             </div>
+            <IconButton>
+                <MoreHoriz className="thread__header__details" />
+            </IconButton>
         </div>
     );
 };
