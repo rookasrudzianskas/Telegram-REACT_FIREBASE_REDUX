@@ -63,7 +63,9 @@ const Thread = () => {
             </div>
 
             <div className="thread__messages">
-
+                {messages.map({id, data}) => (
+                    <Message key={id} data={data} />
+                    )}
             </div>
 
             <div className="thread__input">
