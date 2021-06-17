@@ -21,11 +21,17 @@
     justify-content: center;
     color: #fff !important;
     padding: 10px;
+    align-items: center;
 }
 
 .thread__header__contents__info > h5 {
     font-weight: 500;
     color: gray;
+    margin-left: 15px;
+}
+
+.thread__header__contents__info > h4 {
+    margin-left: 15px;
 }
 
 .thread__header__details {
