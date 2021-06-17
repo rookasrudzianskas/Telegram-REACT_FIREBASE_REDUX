@@ -48,7 +48,7 @@ const Thread = () => {
             photo: user.photo,
             email: user.email,
             displayName: user.displayName,
-        })
+        });
 
         setInput(" ");
 
@@ -77,7 +77,8 @@ const Thread = () => {
             <div className="thread__input">
                 <form action="">
                     <input type="text" value={input} onChange={e => setInput(e.target.value)} placeholder="Write a message..."/>
-                    <IconButton type="submit" onClick={sendMessage}>
+                    <button type="submit" onClick={sendMessage} hidden>Send something</button>
+                    <IconButton>
                         <SendRounded />
                     </IconButton>
 
