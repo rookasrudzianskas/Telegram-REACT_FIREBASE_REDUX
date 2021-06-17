@@ -9,8 +9,13 @@ const Message = forwardRef(({ id, content: { email, photo, message, timestamp } 
     return (
         <div ref={ref} className={`message ${user?.email === email ? 'user--message' : ''}`}>
             <Avatar src={photo} className="message__avatar" />
-            <p>
+            <p className="message_p">
                 {message}
+                {timestamp && (
+                    <small className={`timestamp ${user?.email === email ? 'user--timestamp' : ''}`}>
+                        timestamp
+                    </small>
+                )}
             </p>
         </div>
     );

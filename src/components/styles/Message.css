@@ -1,0 +1,20 @@
+.message {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    justify-content: center;
+    margin: 15px;
+}
+
+.message__contents {
+    background-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    margin-right: auto;
+}
+
+.message > div >  p {
+    color: white;
+}
