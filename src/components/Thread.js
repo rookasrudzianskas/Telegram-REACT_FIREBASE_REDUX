@@ -38,7 +38,7 @@ const Thread = () => {
             <div className="thread__input">
                 <form action="">
                     <input type="text" value={input} onChange={e => setInput(e.target.value)} placeholder="Write a message..."/>
-                    <button type="submit" hidden onClick={sendMessage}>Something here</button>
+                    <button type="submit" onClick={sendMessage}>Something here</button>
                 </form>
             </div>
         </div>
