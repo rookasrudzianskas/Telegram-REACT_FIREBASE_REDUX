@@ -4,6 +4,11 @@ import {Avatar, IconButton} from "@material-ui/core";
 import {MoreHoriz} from "@material-ui/icons";
 
 const Thread = () => {
+
+    const sendMessage = (e) => {
+        e.preventDefault();
+
+    }
     return (
         <div className="thread">
             <div className="thread__header">
@@ -26,7 +31,7 @@ const Thread = () => {
             <div className="thread__input">
                 <form action="">
                     <input type="text" placeholder="Write a message..."/>
-                    <button type="submit" hidden></button>
+                    <button type="submit" hidden onClick={sendMessage}></button>
                 </form>
             </div>
         </div>
