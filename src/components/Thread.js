@@ -48,11 +48,13 @@ const Thread = () => {
             photo: user.photo,
             email: user.email,
             displayName: user.displayName,
-        });
+        }).then(() =>);
 
         setInput(" ");
 
-    }
+    };
+
+
     return (
         <div className="thread">
             <div className="thread__header">
