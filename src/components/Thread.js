@@ -2,16 +2,30 @@ import React, {useState} from 'react';
 import "./styles/Thread.css";
 import {Avatar, IconButton} from "@material-ui/core";
 import {MicNoneOutlined, MoreHoriz, SendRounded, TimerOutlined} from "@material-ui/icons";
+import db from "../firebase";
+import firebase from "firebase";
+import {useSelector} from "react-redux";
 
 const Thread = () => {
 
     const [input, setInput] = useState();
+    const user = useSelector();
+    const [messages, setMessages] = useState([]);
+
 
     const sendMessage = (e) => {
         e.preventDefault();
 
         // firebase stuff goes in here
 
+        db.collection("threads").doc(threadId).collection("messages").add({
+            timestamp: firebase.firestore.FieldValue.serverTimestamp,
+            message: input,
+            uid: user.uid,
+            photo: user.photo,
+            email: user.email,
+            displayName: user.displayName,
+        })
 
         setInput(" ");
 
