@@ -38,7 +38,6 @@ function App() {
             <Telegram />
         )}
 
-    {/*    does not work*/}
     </div>
   );
 }
