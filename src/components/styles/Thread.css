@@ -1,6 +1,6 @@
 .thread {
     display: flex;
-    flex: 0.75;
+    flex: 0.70;
     flex-direction: column;
     height: 100vh;
     background-color: #232D3A;
