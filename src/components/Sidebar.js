@@ -46,9 +46,9 @@ const Sidebar = () => {
             </div>
 
             <div className="sidebar__threads">
-                <SidebarThread />
-                <SidebarThread />
-                <SidebarThread />
+                {threads.map(({id, data: {threadName}}) => (
+                    <SidebarThread  key={id} id={id} threadName={threadName}/>
+                ))}
 
                 </div>
                 <div className="sidebar__bottom">
