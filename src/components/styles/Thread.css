@@ -59,6 +59,11 @@
     border-top: 1px solid rgba(190, 190, 190, 0.1);
 }
 
+.thread__input:hover {
+    transition: all 0.1s;
+    background-color: #263b5f;
+}
+
 .thread__input > form {
     display: flex;
     flex: 1;
@@ -71,7 +76,7 @@
     border: none;
     border-radius: 0;
     background-color: transparent;
-    padding: 5px;
+    padding: 10px;
     color: white;
 }
 
@@ -88,7 +93,7 @@
 }
 
 .thread__input > form > button:hover {
-    color: rgba(190, 190, 190, 0.7);
+    color: rgba(190, 190, 190, 0.9);
     cursor: pointer;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
