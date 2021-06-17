@@ -16,18 +16,24 @@ const Thread = () => {
 
     const threadName = useSelector(selectThreadName);
     const threadId = useSelector(selectThreadId);
+    console.log("THIS THIS", threadId);
 
     useEffect(() => {
-        if(threadId) {
+        if (threadId) {
             db.collection('threads')
-                .collection("messages")
-                .orderBy("timestamp", "desc")
-                .onSnapshot((snapshot) => setMessages(snapshot.docs.map((doc) => {
-                   id: doc.id,
-                   data: doc.data(),
-            })))
+                .doc(threadId)
+                .collection('messages')
+                .orderBy('timestamp', 'asc')
+                .onSnapshot((snapshot) =>
+                    setMessages(
+                        snapshot.docs.map((doc) => ({
+                            id: doc.id,
+                            data: doc.data(),
+                        }))
+                    )
+                );
         }
-    }, []);
+    }, [threadId]);
 
 
     const sendMessage = (e) => {
@@ -63,9 +69,9 @@ const Thread = () => {
             </div>
 
             <div className="thread__messages">
-                {messages.map({id, data}) => (
-                    <Message key={id} data={data} />
-                    )}
+                {/*{messages.map({id, data}) => (*/}
+                {/*    <Message key={id} data={data} />*/}
+                {/*    )}*/}
             </div>
 
             <div className="thread__input">
