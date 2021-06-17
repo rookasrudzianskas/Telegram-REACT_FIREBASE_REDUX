@@ -1,16 +1,34 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "./styles/Thread.css";
 import {Avatar, IconButton} from "@material-ui/core";
 import {MicNoneOutlined, MoreHoriz, SendRounded, TimerOutlined} from "@material-ui/icons";
 import db from "../firebase";
 import firebase from "firebase";
 import {useSelector} from "react-redux";
+import {selectThreadId, selectThreadName} from "../features/threadSlice";
+import {selectUser} from "../features/userSlice";
 
 const Thread = () => {
 
     const [input, setInput] = useState();
-    const user = useSelector();
+    const user = useSelector(selectUser);
     const [messages, setMessages] = useState([]);
+
+    const threadName = useSelector(selectThreadName);
+    const threadId = useSelector(selectThreadId);
+
+    useEffect(() => {
+        if(threadId) {
+            db.collection('threads')
+                .collection("messages")
+                .orderBy("timestamp", "desc")
+                .onSnapshot((snapshot) => setMessages(snapshot.docs.map((doc) => {
+               id: doc.id,
+               data: doc.data(),
+
+            })))
+        }
+    }, []);
 
 
     const sendMessage = (e) => {
