@@ -14,10 +14,10 @@ const Thread = () => {
                         <h5>Last seen</h5>
                     </div>
                 </div>
-            </div>
             <IconButton>
                 <MoreHoriz className="thread__header__details" />
             </IconButton>
+            </div>
         </div>
     );
 };
