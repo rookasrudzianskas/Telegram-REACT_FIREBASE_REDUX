@@ -1,12 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./styles/Thread.css";
 import {Avatar, IconButton} from "@material-ui/core";
 import {MoreHoriz} from "@material-ui/icons";
 
 const Thread = () => {
 
+    const [input, setInput] = useState();
+    console.log(input)
+
     const sendMessage = (e) => {
         e.preventDefault();
+
+        // firebase stuff goes in here
+
+
+        setInput(" ")
 
     }
     return (
@@ -30,8 +38,8 @@ const Thread = () => {
 
             <div className="thread__input">
                 <form action="">
-                    <input type="text" placeholder="Write a message..."/>
-                    <button type="submit" hidden onClick={sendMessage}></button>
+                    <input type="text" value={input} onChange={e => setInput(e.target.value)} placeholder="Write a message..."/>
+                    <button type="submit" hidden onClick={sendMessage}>Something here</button>
                 </form>
             </div>
         </div>
