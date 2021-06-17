@@ -6,7 +6,6 @@ import {MoreHoriz} from "@material-ui/icons";
 const Thread = () => {
 
     const [input, setInput] = useState();
-    console.log(input)
 
     const sendMessage = (e) => {
         e.preventDefault();
@@ -14,7 +13,7 @@ const Thread = () => {
         // firebase stuff goes in here
 
 
-        setInput(" ")
+        setInput(" ");
 
     }
     return (
