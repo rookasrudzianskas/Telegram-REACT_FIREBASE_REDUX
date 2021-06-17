@@ -5,6 +5,8 @@ import db from "../firebase";
 import {setThread} from "../features/threadSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {selectUser} from "../features/userSlice";
+import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
+
 
 const SidebarThread = ({id, threadName}) => {
 
@@ -32,11 +34,11 @@ const SidebarThread = ({id, threadName}) => {
             )
         }
         >
-            <Avatar />
+            <Avatar src={threadInfo[0]?.photo} />
             <div className="sidebarThread__details">
-                    <h3 className="">Thread Name</h3>
-                <p>This is the info</p>
-                <small className="sidebarThread__timestamp">Timestamp goes in here</small>
+                    <h3 className="">{threadName}</h3>
+                <p>{threadInfo[0]?.message}</p>
+                <small className="sidebarThread__timestamp">something</small>
             </div>
         </div>
     );
