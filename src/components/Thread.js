@@ -18,6 +18,17 @@ const Thread = () => {
                 <MoreHoriz className="thread__header__details" />
             </IconButton>
             </div>
+
+            <div className="thread__messages">
+
+            </div>
+
+            <div className="thread__input">
+                <form action="">
+                    <input type="text" placeholder="Write a message..."/>
+                    <button type="submit" hidden></button>
+                </form>
+            </div>
         </div>
     );
 };
