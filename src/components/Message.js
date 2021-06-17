@@ -13,7 +13,7 @@ const Message = forwardRef(({ id, content: { email, photo, message, timestamp } 
                 <p>{message}</p>
                 {timestamp && (
                     <small className={`timestamp ${user?.email === email ? 'user--timestamp' : ''}`}>
-                        timestamp
+                        {new Date(timestamp?.toDate()).toLocaleString()}
                     </small>
                 )}
             </div>
