@@ -14,7 +14,7 @@ const Login = () => {
             <div className="login__telegram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png" alt=""/>
 
-                <h1>Telegram</h1>
+                <h1>Telegram ☎️</h1>
             </div>
 
             <Button onClick={signIn}>Sign In To Telegram</Button>
