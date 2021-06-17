@@ -7,6 +7,7 @@ import firebase from "firebase";
 import {useSelector} from "react-redux";
 import {selectThreadId, selectThreadName} from "../features/threadSlice";
 import {selectUser} from "../features/userSlice";
+import Message from "./Message";
 
 const Thread = () => {
 
@@ -16,7 +17,6 @@ const Thread = () => {
 
     const threadName = useSelector(selectThreadName);
     const threadId = useSelector(selectThreadId);
-    console.log("THIS THIS", threadId);
 
     useEffect(() => {
         if (threadId) {
@@ -69,9 +69,9 @@ const Thread = () => {
             </div>
 
             <div className="thread__messages">
-                {/*{messages.map({id, data}) => (*/}
-                {/*    <Message key={id} data={data} />*/}
-                {/*    )}*/}
+                {messages.map(({ id, data }) => (
+                    <Message key={id} id={data} content={data} />
+                ))}
             </div>
 
             <div className="thread__input">
