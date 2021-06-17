@@ -22,6 +22,15 @@ const Sidebar = () => {
             }))))
     }, []);
 
+    const addThread = () => {
+        const threadName =  prompt("Enter the Thread name 🚀");
+        if(threadName){
+            db.collection("threads").add({
+                threadName: threadName,
+            })
+        }
+    }
+
 
 
     return (
@@ -32,7 +41,7 @@ const Sidebar = () => {
                     <input type="text" placeholder="Search" className="sidebar__input"/>
                 </div>
                 <IconButton id="sidebar__button">
-                    <BorderColorIcon />
+                    <BorderColorIcon onClick={addThread} />
                 </IconButton>
             </div>
 
