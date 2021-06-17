@@ -42,15 +42,16 @@ const Thread = () => {
         // firebase stuff goes in here
 
         db.collection("threads").doc(threadId).collection("messages").add({
-            timestamp: firebase.firestore.FieldValue.serverTimestamp,
-            message: input,
-            uid: user.uid,
-            photo: user.photo,
             email: user.email,
+            photo: user.photo,
+            uid: user.uid,
             displayName: user.displayName,
-        }).then(() =>);
-
+            message: input,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        }).then(() => {
         setInput(" ");
+        });
+
 
     };
 
