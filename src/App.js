@@ -32,7 +32,7 @@ function App() {
 
   return (
     <div className="app">
-        {user ? (
+        {!user ? (
             <Login />
         ) : (
             <Telegram />
