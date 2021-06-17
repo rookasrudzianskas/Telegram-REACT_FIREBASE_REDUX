@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./styles/SidebarThread.css";
 import {Avatar} from "@material-ui/core";
 import db from "../firebase";
+import {setThread} from "../features/threadSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {selectUser} from "../features/userSlice";
 
-const SidebarThread = () => {
+const SidebarThread = ({id, threadName}) => {
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch(selectUser);
     const [threadInfo, setThreadInfo] = useState([]);
 
 
@@ -17,9 +20,18 @@ const SidebarThread = () => {
             .onSnapshot((snapshot) =>
                 setThreadInfo(snapshot.docs.map((doc) => doc.data()))
             );
-    }, []);
+    }, [id]);
+
+
     return (
-        <div className="sidebarThread">
+        <div className="sidebarThread" onClick={() => dispatch(
+            setThread({
+                    threadId: id,
+                    threadName: threadName,
+                })
+            )
+        }
+        >
             <Avatar />
             <div className="sidebarThread__details">
                     <h3 className="">Thread Name</h3>
