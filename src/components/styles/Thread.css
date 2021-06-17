@@ -1,9 +1,9 @@
 .thread {
     display: flex;
-    flex: 0.65;
+    flex: 0.75;
     flex-direction: column;
     height: 100vh;
-    background-color: #2d4671;
+    background-color: #232D3A;
 }
 
 .thread__header {
@@ -21,4 +21,18 @@
     justify-content: center;
     color: #fff !important;
     padding: 10px;
+}
+
+.thread__header__contents__info > h5 {
+    font-weight: 500;
+    color: gray;
+}
+
+.thread__header__details {
+    color: #fff;
+}
+
+.thread__header__details:hover {
+    color: rgba(1, 150, 199);
+    transition: all 0.1s;
 }
