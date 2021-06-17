@@ -18,3 +18,16 @@
 .message > div >  p {
     color: white;
 }
+
+.message__sender {
+    margin-left: auto;
+}
+
+.message__sender > .message__contents {
+    background-color: rgb(2, 150, 199);
+}
+
+.message__sender > .message__photo {
+    order: 1;
+    margin: 15px;
+}

@@ -7,16 +7,16 @@ import { useSelector } from 'react-redux';
 const Message = forwardRef(({ id, content: { email, photo, message, timestamp } }, ref) => {
     const user = useSelector(selectUser);
     return (
-        <div ref={ref} className={`message ${user?.email === email ? 'user--message' : ''}`}>
-            <Avatar src={photo} className="message__avatar" />
-            <p className="message_p">
-                {message}
+        <div ref={ref} className={`message ${user?.email === email ? 'message__sender' : ''}`}>
+            <Avatar src={photo} className="message__photo" />
+            <div className="message__contents">
+                <p>{message}</p>
                 {timestamp && (
                     <small className={`timestamp ${user?.email === email ? 'user--timestamp' : ''}`}>
                         timestamp
                     </small>
                 )}
-            </p>
+            </div>
         </div>
     );
 });
