@@ -36,6 +36,8 @@ const Thread = () => {
     }, [threadId]);
 
 
+
+
     const sendMessage = (e) => {
         e.preventDefault();
 

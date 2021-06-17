@@ -1,21 +1,19 @@
-import React from 'react';
-import "./styles/Message.css";
-import {useSelector} from "react-redux";
-import {selectUser} from "../features/userSlice";
-import {Avatar} from "@material-ui/core";
-import TimeAgo from "react-timeago";
+import React, { forwardRef } from 'react';
+import { Avatar } from '@material-ui/core';
+import './styles/Message.css';
+import { selectUser } from '../features/userSlice';
+import { useSelector } from 'react-redux';
 
-const Message = ({id, data: { timestamp, displayName, email, message, photo, uid}}) => {
+const Message = forwardRef(({ id, content: { email, photo, message, timestamp } }, ref) => {
     const user = useSelector(selectUser);
     return (
-        <div className={`message ${user.email === email && `message__sender`}`}>
-            <Avatar src={photo} className="message__photo" />
-            <div className="message__contents">
-                <p>{message}</p>
-                <small>something</small>
-            </div>
+        <div ref={ref} className={`message ${user?.email === email ? 'user--message' : ''}`}>
+            <Avatar src={photo} className="message__avatar" />
+            <p>
+                {message}
+            </p>
         </div>
     );
-};
+});
 
 export default Message;
