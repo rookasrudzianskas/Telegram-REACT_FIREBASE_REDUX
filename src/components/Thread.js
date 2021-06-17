@@ -23,9 +23,8 @@ const Thread = () => {
                 .collection("messages")
                 .orderBy("timestamp", "desc")
                 .onSnapshot((snapshot) => setMessages(snapshot.docs.map((doc) => {
-               id: doc.id,
-               data: doc.data(),
-
+                   id: doc.id,
+                   data: doc.data(),
             })))
         }
     }, []);
